@@ -24,7 +24,7 @@ def parse_json(postal_code):
 def main():
     print "Getting your current weather information..."
     weather = parse_json(postal_code)
-    print weather
+    print weather + "C"
     
 if __name__ == "__main__":
     main()
