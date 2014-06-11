@@ -8,6 +8,7 @@ def get_ip_address():
     
     return my_ip
 
+#Parses json data
 def parse(ip_address):
     
     #open and read data
