@@ -54,6 +54,9 @@
 
 <p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
 
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+
 <script>
 function showParticipants() {
   var participants = gapi.hangout.getParticipants();
@@ -74,20 +77,11 @@ function showParticipants() {
   var div = document.getElementById('participantsDiv');
 
   div.innerHTML = participants.length;
-  var callbackUrl = 'http://localhost/~mertmetin/Proximify/uniweb/#!uottawa/?';
+  xmlhttp=new XMLHttpRequest();
+  xmlhttp.open("GET","http://localhost/~mertmetin/Proximify/uniweb/#!uottawa/collaboration.php?action=requestAccess",true);
+  xmlhttp.send('abcasdasdad');
 
-$.ajax({
-	url: callbackUrl,
-	dataType: 'text',
-	data: {
-		"participants" : participants
-	}
-}).done( function(data, status, xhr){
-	//call was made process result
-	console.log('done');
-}).fail( function(xhr, status, error){
-	console.log('fail');
-});
+
 }
 
 function init() {
