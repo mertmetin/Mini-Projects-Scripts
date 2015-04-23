@@ -79,7 +79,7 @@ function showParticipants() {
   div.innerHTML = participants.length;
   console.log('start');
   xmlhttp=new XMLHttpRequest();
-  xmlhttp.open("GET","//localhost/~mertmetin/Proximify/uniweb/#!uottawa/collaboration.php?action=requestAccess",true);
+  xmlhttp.open("GET","//localhost/~mertmetin/Proximify/uniweb/#!uottawa/collaboration.php?action=getHangoutParticipants",true);
   xmlhttp.send(participants);
   console.log('finish');
 
