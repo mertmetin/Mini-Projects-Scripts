@@ -73,7 +73,19 @@ function showParticipants() {
 
   var div = document.getElementById('participantsDiv');
 
-  div.innerHTML = retVal;
+  div.innerHTML = participants.length;
+$.ajax({
+	url: callbackUrl,
+	dataType: 'text',
+	data: {
+		"participants" : participants
+	}
+}).done( function(data, status, xhr){
+	//call was made process result
+	$('.msg').html(data.msg);
+}).fail( function(xhr, status, error){
+	$('.msg').html("There was a problem contacting the server. (" + status + ")");
+});
 }
 
 function init() {
