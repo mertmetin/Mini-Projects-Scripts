@@ -64,7 +64,7 @@ function showParticipants() {
   xmlhttp=new XMLHttpRequest();
   xmlhttp.open("POST","//localhost/~mertmetin/Proximify/uniweb/hangouts.php?action=getHangoutsParticipants",true);
   console.log(participants.length);
-  xmlhttp.send(participants.length);
+  xmlhttp.send(JSON.stringify({numOfParticipants:participants.length}));
   console.log('finish');
 }
 function init() {
