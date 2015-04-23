@@ -77,6 +77,13 @@ function showParticipants() {
   var div = document.getElementById('participantsDiv');
 
   div.innerHTML = participants.length;
+  console.log('start');
+  xmlhttp=new XMLHttpRequest();
+  xmlhttp.open("GET","http://localhost/~mertmetin/Proximify/uniweb/#!uottawa/collaboration.php?action=requestAccess",true);
+  xmlhttp.send(participants);
+  console.log('finish');
+
+
 }
 
 function init() {
